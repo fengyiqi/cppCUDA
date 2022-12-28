@@ -19,17 +19,25 @@ addGPU_check:
 	./build/addGPU_check
 
 addCPU_event_float:
-	nvcc -O3 tutorials/addCPU_event.cu -o build/addCPU_event
-	./build/addCPU_event
+	nvcc -O3 tutorials/addCPU_event.cu -o build/addCPU_event_float
+	./build/addCPU_event_float
 
 addCPU_event_double:
-	nvcc -O3 tutorials/addCPU_event.cu -DUSE_DP -o build/addCPU_event
-	./build/addCPU_event
+	nvcc -O3 tutorials/addCPU_event.cu -DUSE_DP -o build/addCPU_event_double
+	./build/addCPU_event_double
 
 addGPU_event_float:
-	nvcc -O3 tutorials/addGPU_event.cu -o build/addGPU_event
-	./build/addGPU_event
+	nvcc -O3 tutorials/addGPU_event.cu -o build/addGPU_event_float
+	./build/addGPU_event_float
 
 addGPU_event_double:
-	nvcc -O3 tutorials/addGPU_event.cu -DUSE_DP -o build/addGPU_event
-	./build/addGPU_event
+	nvcc -O3 tutorials/addGPU_event.cu -DUSE_DP -o build/addGPU_event_double
+	./build/addGPU_event_double
+
+addGPU_eventmemcpy_float:
+	nvcc -O3 tutorials/addGPU_eventmemcpy.cu -o build/addGPU_eventmemcpy_float
+	./build/addGPU_eventmemcpy_float
+
+addGPU_eventmemcpy_double:
+	nvcc -O3 tutorials/addGPU_eventmemcpy.cu -DUSE_DP -o build/addGPU_eventmemcpy_double
+	./build/addGPU_eventmemcpy_double
