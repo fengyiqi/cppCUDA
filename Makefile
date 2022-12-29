@@ -30,6 +30,10 @@ addGPU_event_float:
 	nvcc -O3 tutorials/addGPU_event.cu -o build/addGPU_event_float
 	./build/addGPU_event_float
 
+addGPU_event_float_sm:
+	nvcc -O3 --ptxas-options=-v tutorials/addGPU_event.cu -o build/addGPU_event_float_sm
+	./build/addGPU_event_float_sm
+
 addGPU_event_double:
 	nvcc -O3 tutorials/addGPU_event.cu -DUSE_DP -o build/addGPU_event_double
 	./build/addGPU_event_double
@@ -41,3 +45,12 @@ addGPU_eventmemcpy_float:
 addGPU_eventmemcpy_double:
 	nvcc -O3 tutorials/addGPU_eventmemcpy.cu -DUSE_DP -o build/addGPU_eventmemcpy_double
 	./build/addGPU_eventmemcpy_double
+
+
+static:
+	nvcc tutorials/static.cu -o build/static
+	./build/static
+
+query:
+	nvcc tutorials/query.cu -o build/query
+	./build/query
