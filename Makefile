@@ -54,3 +54,7 @@ static:
 query:
 	nvcc tutorials/query.cu -o build/query
 	./build/query
+
+matrix:
+	nvcc -arch=sm_35 tutorials/matrix.cu -o build/matrix
+	./build/matrix 10000
