@@ -56,5 +56,25 @@ query:
 	./build/query
 
 matrix:
-	nvcc -arch=sm_35 tutorials/matrix.cu -o build/matrix
+	nvcc -arch=sm_35 -O3 tutorials/matrix.cu -o build/matrix
 	./build/matrix 10000
+
+reduceCPU_double:
+	nvcc -DUSE_DP -O3 tutorials/reduceCPU.cu -o build/reduceCPU_double
+	./build/reduceCPU_double
+
+reduceCPU_float:
+	nvcc -O3 tutorials/reduceCPU.cu -o build/reduceCPU_float
+	./build/reduceCPU_float
+
+reduceGPU_float:
+	nvcc -arch=sm_75 -O3 tutorials/reduceGPU.cu -o build/reduceGPU_float
+	./build/reduceGPU_float
+
+reduceGPU_double:
+	nvcc -arch=sm_75 -O3 -DUSE_DP tutorials/reduceGPU.cu -o build/reduceGPU_double
+	./build/reduceGPU_double
+
+matrix_bank:
+	nvcc -arch=sm_75 -O3 tutorials/matrix_bank.cu -o build/matrix_bank
+	./build/matrix_bank 10000
