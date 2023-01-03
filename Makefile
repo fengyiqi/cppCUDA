@@ -78,3 +78,7 @@ reduceGPU_double:
 matrix_bank:
 	nvcc -arch=sm_75 -O3 tutorials/matrix_bank.cu -o build/matrix_bank
 	./build/matrix_bank 10000
+
+reduceGPU_atomic:
+	nvcc -arch=sm_75 -O3 tutorials/reduceGPU_atomic.cu -o build/reduceGPU_atomic
+	./build/reduceGPU_atomic
