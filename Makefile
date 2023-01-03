@@ -82,3 +82,7 @@ matrix_bank:
 reduceGPU_atomic:
 	nvcc -arch=sm_75 -O3 tutorials/reduceGPU_atomic.cu -o build/reduceGPU_atomic
 	./build/reduceGPU_atomic
+
+neighborCPU:
+	nvcc -arch=sm_75 -O3 tutorials/neighborCPU.cu -o build/neighborCPU
+	cd build; ./neighborCPU
