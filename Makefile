@@ -86,3 +86,7 @@ reduceGPU_atomic:
 neighborCPU:
 	nvcc -arch=sm_75 -O3 tutorials/neighborCPU.cu -o build/neighborCPU
 	cd build; ./neighborCPU
+
+neighborGPU:
+	nvcc -arch=sm_75 -O3 tutorials/neighborGPU.cu -o build/neighborGPU
+	cd build; ./neighborGPU
