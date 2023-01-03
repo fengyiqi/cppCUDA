@@ -11,7 +11,7 @@ data = np.array(data, dtype=float)
 
 # plot c60
 plt.figure(figsize=(5, 5), dpi=100)
-plt.scatter(data[:, 0], data[:, 1], s=0.4, c="black")
+plt.scatter(data[:, 0], data[:, 1], s=0.2, c="black")
 plt.xlim(60, 180)
 plt.ylim(60, 180)
 plt.xlabel(r"$x/\AA$")
@@ -44,12 +44,12 @@ for i, n in enumerate(neighbors):
 
 # plot particles and bonds
 plt.figure(figsize=(5, 5), dpi=100)
-plt.scatter(data[:, 0], data[:, 1], s=0.4, c="black")
 for key in bonds.keys():
-    print(f"{key}/22464")
+    print(f"{key}/22463")
     if bonds[key].size > 0:    
         for i in range(0, len(bonds[key]), 2):
-            plt.plot(bonds[key][i:i+2, 0], bonds[key][i:i+2, 1], "r-", linewidth=0.4)
+            plt.plot(bonds[key][i:i+2, 0], bonds[key][i:i+2, 1], "r-", linewidth=0.5, zorder=1)
+plt.scatter(data[:, 0], data[:, 1], s=0.2, c="black", zorder=2)
 plt.xlim(60, 180)
 plt.ylim(60, 180)
 plt.xlabel(r"$x/\AA$")
