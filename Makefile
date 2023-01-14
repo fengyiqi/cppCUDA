@@ -90,3 +90,19 @@ neighborCPU:
 neighborGPU:
 	nvcc -arch=sm_75 -O3 tutorials/neighborGPU.cu -o build/neighborGPU
 	cd build; ./neighborGPU
+
+reduceGPU_warp:
+	nvcc -arch=sm_75 -O3 tutorials/reduceGPU_warp.cu -o build/reduceGPU_warp
+	./build/reduceGPU_warp
+
+warp_func:
+	nvcc tutorials/warp_func.cu -o build/warp_func
+	./build/warp_func
+
+reduceGPU_stride:
+	nvcc -arch=sm_75 -O3 tutorials/reduceGPU_stride.cu -o build/reduceGPU_stride
+	./build/reduceGPU_stride
+
+reduceGPU_static:
+	nvcc -arch=sm_75 -O3 tutorials/reduceGPU_static.cu -o build/reduceGPU_static
+	./build/reduceGPU_static
