@@ -106,3 +106,15 @@ reduceGPU_stride:
 reduceGPU_static:
 	nvcc -arch=sm_75 -O3 tutorials/reduceGPU_static.cu -o build/reduceGPU_static
 	./build/reduceGPU_static
+
+host_kernel:
+	nvcc -arch=sm_75 -O3 tutorials/host_kernel.cu -o build/host_kernel
+	./build/host_kernel
+
+kernel_kernel:
+	nvcc -arch=sm_75 -O3 tutorials/kernel_kernel.cu -o build/kernel_kernel
+	./build/
+	
+kernel_transfer:
+	nvcc -arch=sm_75 -O3 tutorials/kernel_transfer.cu -o build/kernel_transfer
+	./build/kernel_transfer
